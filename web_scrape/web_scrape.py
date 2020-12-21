@@ -14,12 +14,13 @@ def get_citations_needed_report(url):
     word='citation needed'
     res=[]
 
-    for i in soup.select('p'):
+    for i in soup.select('p') :
         ele=i.get_text()
         
         if word in ele:
             print(' \n ********* \n ')
-            print(ele[0:ele.find('needed')+len('needed ')])
+            print(ele)
+            print(ele[0:ele.find('needed]')+len('needed ')])
             res.append(ele)
         dic={
         'citation':ele
